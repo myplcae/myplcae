@@ -1,5 +1,7 @@
 package src.com.concurrency.PC;
 
+import java.util.stream.Stream;
+
 public class ProducerConsumerVersion3 {
 
     private int i = 0;
@@ -10,18 +12,18 @@ public class ProducerConsumerVersion3 {
 
     public void produced(){
         synchronized (LOCK){
-            if (isProduced){
+            while (isProduced){
                 try {
                     LOCK.wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-            }else {
+            }
                 i++;
                 System.out.println("P->"+i);
-                LOCK.notify();
+                LOCK.notifyAll();
                 isProduced = true;
-            }
+
         }
     }
     public void consume(){
@@ -35,7 +37,7 @@ public class ProducerConsumerVersion3 {
             }
             if (isProduced){
                 System.out.println("C->"+i);
-                LOCK.notify();
+                LOCK.notifyAll();
                 isProduced = false;
             }else {
                 try {
@@ -45,5 +47,39 @@ public class ProducerConsumerVersion3 {
                 }
             }
         }
+    }
+
+    public static void main(String[] args) {
+        ProducerConsumerVersion3 pc = new ProducerConsumerVersion3();
+        Stream.of("P1","P2","P3").forEach(n ->
+                new Thread(n){
+                    @Override
+                    public void run(){
+                        while (true){
+                            pc.produced();
+                            try {
+                                Thread.sleep(10);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                }.start()
+        );
+        Stream.of("C1","C2","C3","C4").forEach(n ->
+                new Thread(n){
+                    @Override
+                    public void run(){
+                        while (true){
+                            pc.consume();
+                            try {
+                                Thread.sleep(10);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                }.start()
+        );
     }
 }
