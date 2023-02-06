@@ -9,23 +9,17 @@ public class ImmutablePerformance {
         syncObjc.setName("Alex");
         //不加锁 ime3159  time8683
         //ImmutableObj immutableObj = new ImmutableObj("Alex");
-        Thread t1=new Thread() {
-                @Override
-                public void run() {
-                    for (long l = 0L;l < 1000000; l++){
-                        System.out.println(Thread.currentThread().getName() + "=" + syncObjc.toString());
-                    }
-                }
-            };
-            t1.start();
-        Thread t2=new Thread() {
-            @Override
-            public void run() {
-                for (long l = 0L;l < 1000000; l++){
-                    System.out.println(Thread.currentThread().getName() + "=" + syncObjc.toString());
-                }
+        Thread t1= new Thread(() -> {
+            for (long l = 0L;l < 1000000; l++){
+                System.out.println(Thread.currentThread().getName() + "=" + syncObjc.toString());
             }
-        };
+        });
+            t1.start();
+        Thread t2= new Thread(() -> {
+            for (long l = 0L;l < 1000000; l++){
+                System.out.println(Thread.currentThread().getName() + "=" + syncObjc.toString());
+            }
+        });
         t2.start();
         t1.join();
         t2.join();
