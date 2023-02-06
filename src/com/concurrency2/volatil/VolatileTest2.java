@@ -1,7 +1,7 @@
 package src.com.concurrency2.volatil;
 
 public class VolatileTest2 {
-    private  static int INIT_VALUE = 0;
+    private  static volatile int INIT_VALUE = 0;
 
     private final static int MAX_LIMIT = 50;
 
@@ -21,7 +21,7 @@ public class VolatileTest2 {
 
         new Thread(()->{
             while (INIT_VALUE < MAX_LIMIT){
-                System.out.printf("Update value updated to [%d]\n",++(INIT_VALUE));
+                System.out.printf("T2",++(INIT_VALUE));
                 try {
                     Thread.sleep(1);
                 } catch (InterruptedException e) {
