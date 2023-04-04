@@ -1,33 +1,38 @@
 package src.LeedCodeStudy;
 
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Scanner;
 
+// 注意类名必须为 Main, 不要有任何 package xxx 信息
 public class Test3 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+        // 注意 hasNext 和 hasNextLine 的区别
         while (in.hasNextInt()) { // 注意 while 处理多个 case
-            HashSet<Integer> set = new HashSet<>();//存放所有可能的结果，不用担心重复问题
-            set.add(0);//初始化为0
-            int n = in.nextInt();//个数
-            int[] w = new int[n];
-            int[] nums = new int[n];
-            for (int i = 0; i < n; i++) {
-                w[i] = in.nextInt();//砝码的重量
-            }
-            for (int i = 0; i < n; i++) {
-                nums[i] = in.nextInt();//砝码个数
-            }
-            for (int i = 0; i < n; i++) { //遍历砝码
-                ArrayList<Integer> list = new ArrayList<>(set);//取当前所有的结果
-                for (int j = 1; j <= nums[i]; j++) { //遍历个数
-                    for (int k = 0; k < list.size(); k++) {
-                        set.add(list.get(k) + w[i] * j);
+            String a = in.nextLine();
+            String b = in.nextLine();
+            int m = a.length();
+            int n = b.length();
+            int[][] xj = new int[m+1][n+1];
+            int maxLength = 0;
+            int maxI = 0,maxJ = 0;
+            for(int i=1;i <= m;i++){
+                for(int j=1;j<=n;j++){
+                    if(a.charAt(i-1) == b.charAt(j-1)){
+                        xj[i][j] = 1+xj[i-1][j-1];
+                        if(xj[i][j] >maxLength){
+                            maxLength = xj[i][j];
+                            maxI = i;
+                            maxJ = j;
+                        }else if(xj[i][j] == maxLength){
+                            if(m<n && maxI >i || n<m && maxJ > j){
+                                maxI = i;
+                                maxJ = j;
+                            }
+                        }
                     }
                 }
             }
-            System.out.println(set.size());
+            System.out.println(a.substring(maxI-maxLength,maxI));
         }
     }
 }
