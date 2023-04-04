@@ -1,38 +1,47 @@
 package src.LeedCodeStudy;
 
-import java.util.Scanner;
+import java.util.*;
+public class Test3{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        while(sc.hasNext()){
+            String s1=sc.nextLine();
+            String s2=sc.nextLine();
+            System.out.println(longString(s1,s2));
+        }
+    }
 
-// 注意类名必须为 Main, 不要有任何 package xxx 信息
-public class Test3 {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        // 注意 hasNext 和 hasNextLine 的区别
-        while (in.hasNextInt()) { // 注意 while 处理多个 case
-            String a = in.nextLine();
-            String b = in.nextLine();
-            int m = a.length();
-            int n = b.length();
-            int[][] dp = new int[m + 1][n + 1];
-            int maxLength = 0;
-            int maxI = 0, maxJ = 0;
-            for (int i = 1; i <= m; i++) {
-                for (int j = 1; j <= n; j++) {
-                    if (a.charAt(i - 1) == b.charAt(j - 1)) {
-                        dp[i][j] = 1 + dp[i - 1][j - 1];
-                        if (dp[i][j] > maxLength) {
-                            maxLength = dp[i][j];
-                            maxI = i;
-                            maxJ = j;
-                        } else if (dp[i][j] == maxLength) {
-                            if (m < n && maxI > i || n < m && maxJ > j) {
-                                maxI = i;
-                                maxJ = j;
-                            }
-                        }
+    // 动态规划
+    public static String longString(String str1, String str2) {
+        String temp = "";
+        // 保证str1是较短字符串
+        if (str1.length() > str2.length()) {
+            temp = str1;
+            str1 = str2;
+            str2 = temp;
+        }
+        int m = str1.length() + 1;
+        int n = str2.length() + 1;
+        // 表示在较短字符串str1以第i个字符结尾，str2中以第j个字符结尾时的公共子串长度。
+        int[][] dp = new int[m][n];
+        // 匹配字符，并记录最大值的str1的结尾下标
+        int max = 0;
+        int index = 0;
+        // 从左向右递推，i为短字符串str1的结尾索引，j为str2的结尾索引
+        for (int i=1; i < m; i++) {
+            for (int j=1; j < n; j++) {
+                if (str1.charAt(i-1) == str2.charAt(j-1)) {
+                    // 相等则计数
+                    dp[i][j] = dp[i-1][j-1] + 1;
+                    // 不断更新变量
+                    if (dp[i][j] > max) {
+                        max = dp[i][j];
+                        index = i;
                     }
                 }
             }
-            System.out.println(a.substring(maxI - maxLength, maxI));
         }
+        // 截取最大公共子串
+        return str1.substring(index-max, index);
     }
 }
