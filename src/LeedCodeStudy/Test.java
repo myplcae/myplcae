@@ -7,22 +7,20 @@ public class Test {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int[][] board = new int[9][9];
-        for(int i = 0;i <9;i++){
-            for(int j = 0; i< 9;i++){
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
                 board[i][j] = in.nextInt();
             }
         }
         solveSudoku(board);
         //输出二维矩阵
-        for(int i = 0;i < 9;i++){
-            for(int j = 0;i < 8;j++){
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 8; j++) {
                 System.out.print(board[i][j] + " ");
             }
-            //换行，每一行的最后一个数字
-            System.out.println(board[i][8]);
+            System.out.println(board[i][8]);//换行，每一行的最后一个数字
         }
     }
-
     public static boolean solveSudoku(int[][] board) {
         //「一个for循环遍历棋盘的行，一个for循环遍历棋盘的列，
         // 一行一***定下来之后，递归遍历这个位置放9个数字的可能性！」
@@ -50,25 +48,31 @@ public class Test {
         return true;
     }
 
-    private static boolean isValidSudoku(int row, int col, int val, int[][] board) {
-        //同行是否重复
-        for(int i = 0;i<9;i++){
-            if(board[row][i] == val){
+    /**
+     * 判断棋盘是否合法有如下三个维度:
+     *     同行是否重复
+     *     同列是否重复
+     *     9宫格里是否重复
+     */
+    public static boolean isValidSudoku(int row, int col, int val, int[][]      board) {
+        // 同行是否重复
+        for (int i = 0; i < 9; i++) {
+            if (board[row][i] == val) {
                 return false;
             }
         }
-        //同列是否重复
-        for(int j = 0;j< 9;j++){
-            if(board[j][col] == val){
+        // 同列是否重复
+        for (int j = 0; j < 9; j++) {
+            if (board[j][col] == val) {
                 return false;
             }
         }
-        //9宫格里是否重复
-        int startRow = (row/3)*3;
-        int startCol = (col/3)*3;
-        for(int i = startRow;i<startRow+3;i++){
-            for(int j = startCol;j<startCol+3;j++){
-                if(board[i][j] == val){
+        // 9宫格里是否重复
+        int startRow = (row / 3) * 3;
+        int startCol = (col / 3) * 3;
+        for (int i = startRow; i < startRow + 3; i++) {
+            for (int j = startCol; j < startCol + 3; j++) {
+                if (board[i][j] == val) {
                     return false;
                 }
             }
