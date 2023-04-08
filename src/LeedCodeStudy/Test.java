@@ -12,28 +12,27 @@ public class Test {
             String b = in.nextLine();
             int m = a.length();
             int n = b.length();
-            int[][] arr = new int[m+1][n+1];
-            int maxlength = 0;
-            int maxl = 0,maxj = 0;
-            for(int i = 0;i <= m; i++){
-                for(int j = 1;j<=n;j++){
-                    if(a.charAt(i-1) == b.charAt(j-1)){
-                        arr[i][j] = 1 + arr[i-1][j-1];
-                        if(arr[i][j] > maxlength){
-                            maxlength =  arr[i][j];
-                            maxl = i;
-                            maxj = j;
-                        }else if(arr[i][j] == maxlength){
-                            if(m < n && maxl >i || n< m && maxj >j){
-                                maxl = i;
-                                maxj = j;
+            int[][] dp = new int[m + 1][n + 1];
+            int maxLength = 0;
+            int maxI = 0, maxJ = 0;
+            for (int i = 1; i <= m; i++) {
+                for (int j = 1; j <= n; j++) {
+                    if (a.charAt(i - 1) == b.charAt(j - 1)) {
+                        dp[i][j] = 1 + dp[i - 1][j - 1];
+                        if (dp[i][j] > maxLength) {
+                            maxLength = dp[i][j];
+                            maxI = i;
+                            maxJ = j;
+                        } else if (dp[i][j] == maxLength) {
+                            if (m < n && maxI > i || n < m && maxJ > j) {
+                                maxI = i;
+                                maxJ = j;
                             }
                         }
                     }
                 }
             }
-            System.out.println(a.substring(maxl-maxlength,maxl));
-
+            System.out.println(a.substring(maxI - maxLength, maxI));
         }
     }
 }
