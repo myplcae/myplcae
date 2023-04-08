@@ -2,47 +2,38 @@ package src.LeedCodeStudy;
 
 import java.util.Scanner;
 
+// 注意类名必须为 Main, 不要有任何 package xxx 信息
 public class Test {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        while (sc.hasNext()) {
-            int n = sc.nextInt();
-            String cmd = sc.next();
-            parseCmd(cmd, n);
-        }
-    }
+        Scanner in = new Scanner(System.in);
+        // 注意 hasNext 和 hasNextLine 的区别
+        while (in.hasNextLine()) { // 注意 while 处理多个 case
+            String a = in.nextLine();
+            String b = in.nextLine();
+            int m = a.length();
+            int n = b.length();
+            int[][] arr = new int[m+1][n+1];
+            int maxlength = 0;
+            int maxl = 0,maxj = 0;
+            for(int i = 0;i <= m; i++){
+                for(int j = 1;j<=n;j++){
+                    if(a.charAt(i-1) == b.charAt(j-1)){
+                        arr[i][j] = 1 + arr[i-1][j-1];
+                        if(arr[i][j] > maxlength){
+                            maxlength =  arr[i][j];
+                            maxl = i;
+                            maxj = j;
+                        }else if(arr[i][j] == maxlength){
+                            if(m < n && maxl >i || n< m && maxj >j){
+                                maxl = i;
+                                maxj = j;
+                            }
+                        }
+                    }
+                }
+            }
+            System.out.println(a.substring(maxl-maxlength,maxl));
 
-    public static void parseCmd(String commands, int n) {
-        // 页面的起始位置
-        int start = 1;
-        // 页面的末位置
-        int end = Math.min(n, 4);
-        // 光标的位置， 三个位置都是从1开始
-        int index = 1;
-        for (int i = 0; i < commands.length(); i++) {
-            // 根据向上移动和向下移动的公式，光标位置的变化
-            if (commands.charAt(i) == 'U') {
-                index = (index - 1 - 1 + n) % n + 1;
-            } else if (commands.charAt(i) == 'D') {
-                index = index % n + 1;
-            }
-            // 判断滑动窗口的位置是否需要改变
-            if (index < start) {
-                // 光标在窗口之上
-                start = index;
-                end = start + 3;
-            } else if (index > end) {
-                // 光标在窗口之下
-                end = index;
-                start = end - 3;
-            }
         }
-        // 输出窗口内容
-        for (int i = start; i <= end; i++) {
-            System.out.print(i + " ");
-        }
-        System.out.println();
-        // 打印当前光标
-        System.out.println(index);
     }
 }
