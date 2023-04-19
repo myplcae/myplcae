@@ -2,15 +2,15 @@ package src.com.thread;
 
 import java.util.Scanner;
 public class bank2 {
-    String NAME[]=new String[100];//资源的名称
-    int Max[][]= new int[100][100];//最大需求矩阵
-    int Allocation[][]=new int[100][100];//系统已分配矩阵
-    int Need[][]=new int[100][100];//还需要资源矩阵
-    int Available[]=new int[100];//可用资源矩阵
-    int Request[]=new int[100];//请求资源向量
-    int Work[]=new int[100];//存放系统可提供资源量
-    int Finish[]=new int[100]; //标记系统是否有足够的资源分配给各个进程
-    int Security[]=new int[100];//存放安全序列
+    String[] NAME =new String[100];//资源的名称
+    int[][] Max = new int[100][100];//最大需求矩阵
+    int[][] Allocation =new int[100][100];//系统已分配矩阵
+    int[][] Need =new int[100][100];//还需要资源矩阵
+    int[] Available =new int[100];//可用资源矩阵
+    int[] Request =new int[100];//请求资源向量
+    int[] Work =new int[100];//存放系统可提供资源量
+    int[] Finish =new int[100]; //标记系统是否有足够的资源分配给各个进程
+    int[] Security =new int[100];//存放安全序列
 
 
     int M=100;//进程的最大数
@@ -23,7 +23,7 @@ public class bank2 {
         int number;
         boolean flag;
         String name;//输入资源名称
-        int temp[]=new int[100];//统计已分配资源
+        int[] temp =new int[100];//统计已分配资源
         //输入系统资源数目及各资源初试个数
         System.out.print("系统可用资源种类为:");
         n=sc.nextInt();
@@ -143,7 +143,7 @@ public class bank2 {
     }
 
     //尝试分配资源
-    public int test(int i)
+    public void test(int i)
     {
         for(int j=0;j<N;j++)
         {
@@ -151,10 +151,9 @@ public class bank2 {
             Allocation[i][j]=Allocation[i][j]+Request[j];
             Need[i][j]=Need[i][j]-Request[j];
         }
-        return 1;
     }
     //试探性分配资源作废，与test操作相反
-    public int retest(int i)
+    public void retest(int i)
     {
         for(int j=0;j<N;j++)
         {
@@ -162,7 +161,6 @@ public class bank2 {
             Allocation[i][j]=Allocation[i][j]-Request[j];
             Need[i][j]=Need[i][j]+Request[j];
         }
-        return 1;
     }
 
     //安全性算法
@@ -299,6 +297,6 @@ public class bank2 {
                     System.out.println("请正确选择！");
                     break;
             }
-        }while(choice!="");
+        }while(!"".equals(choice));
     }
 }
