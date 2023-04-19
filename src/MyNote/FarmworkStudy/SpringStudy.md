@@ -1,10 +1,11 @@
 bean的生命周期：
-        1、实例化 Instantiation：当客户向容器请求一个尚未初始化的bean时，或初始化bean的时候需要注入另一尚未初始化的依赖时，
+        1.创建前准备；
+        2、实例化 Instantiation：当客户向容器请求一个尚未初始化的bean时，或初始化bean的时候需要注入另一尚未初始化的依赖时，
     容器会调用createBean进行实例化；
-        2、设置对象属性（依赖注入）：实例化后的对象被封装在BeanWrapper对象中，Spring根据BeanDefinition中的信息以及通过
+        3、设置对象属性（依赖注入）：实例化后的对象被封装在BeanWrapper对象中，Spring根据BeanDefinition中的信息以及通过
     BeanWrapper提供的设置属性的接口完成属性设置与依赖注入；
-        3、处理Aware接口：拿到被封装对象之后就可以通过aware接口调用然后被使用；
-        4、使用完之后就会被回收。
+        4、处理Aware接口：拿到被封装对象之后就可以通过aware接口调用然后被使用；
+        5、使用完之后就会被销毁。
     ![img.png](img.png)
 Spring AOP:
     springAOP是spring的一个核心设计理念，及面向切面编程；由于有了bean的理念，就有了中间层代理实现对象托管的模式，而需要额外处理的
@@ -28,6 +29,62 @@ setter）或者是构造器传递给需要的对象。
     1.属性注入（Field Injection）
     2.构造器注入（Constructor Injection） 
     3.setter 方法注入;
+springMVC的流程：
+    ![img_1.png](img_1.png)
+    1.用户向服务器发送请求，请求被Spring 前端控制Servelt DispatcherServlet(中央处理器)捕获；
+    2.DispatcherServlet对请求URL进行解析，得到请求资源标识符（URI）。然后根据该URI，调用HandlerMapping获得该Handler配置
+的所有相关的对象（包括Handler对象以及Handler对象对应的拦截器），最后以HandlerExecutionChain对象的形式返回给
+DispatcherServlet(中央处理器)；
+    3.DispatcherServlet 根据获得的Handler，选择一个合适的HandlerAdapter。（附注：如果成功获得HandlerAdapter后，
+此时将开始执行拦截器的preHandler(…)方法）
+    4.提取Request中的模型数据，填充Handler入参，开始执行Handler（Controller)。 在填充Handler的入参过程中，根据你的配置，
+Spring将帮你做一些额外的工作：
+HttpMessageConveter： 将请求消息（如Json、xml等数据）转换成一个对象，将对象转换为指定的响应信息数据转换：
+对请求消息进行数据转换。如String转换成Integer、Double等数据根式化：对请求消息进行数据格式化。 如将字符串转换成格式化数字
+或格式化日期等数据验证： 验证数据的有效性（长度、格式等），验证结果存储到BindingResult或Error中.
+    5.Handler执行完成后，向DispatcherServlet 返回一个ModelAndView对象；
+    6.根据返回的ModelAndView，选择一个适合的ViewResolver（必须是已经注册到Spring容器中的ViewResolver)返回给
+DispatcherServlet ；
+    7.ViewResolver 结合Model和View，来渲染视图
+    8.将渲染结果返回给客户端。
+SpringMVC常用注解：
+    @Controller ：用于配合组件扫描创建控制器对象，常与@RequestMapping配合使用，包括元注解@Component;
+    @RequestController:它元注解有@Controller 和 @ResponseBody 注解;
+    @ResponseBody: 表明控制器方法的返回值绑定到 HTTP 响应体;
+    @RequstMapping：使用@RequestMapping 注解来映射请求到控制器方法;
+    @PostMapping：用于将 HTTP POST 请求映射到特定的处理方法的注解;
+    @GetMapping ：用于将 HTTP GET 请求映射到特定的处理方法的注解;
+    @RequestBody ：标注在方法参数上，表示网络请求正文映射到方法参数;
+    @RequestParam：将请求参数映射到控制器的方法参数上;
+    @PathVariable：将请求路径上“URI 模版”映射到控制器的方法参数上;
+    @ResponseStatus: 设定 HTTP 响应状态码;
+    @RequestHeader：映射请求头到控制器方法参数.
+@RequestMapping 和 GetMapping 和@PostMapping 三者的区别：http映射方式不同。
+MyBatis相关
+    优点：基于SQL语句编程，相当灵活，不会对应用程序或者数据库的现有设计造成任何影响，SQL写在XML里，解除sql与程序代码的耦合，
+便于统一管理；提供XML标签，支持编写动态 SQL语句，并可重用。与JDBC相比，减少了50%以上的代码量，消除了JDBC大量冗余的代码，不
+需要手动开关 连接；很好的与各种数据库兼容（因为MyBatis使用JDBC来连接数据库，所以只要JDBC支持 的数据库MyBatis都支持）。能
+够与Spring很好的集成；提供映射标签，支持对象与数据库的ORM字段关系映射；提供对象关系映射 标签，支持对象关系组件维护。
+    缺点：SQL 语句的编写工作量较大；SQL 语句依赖于数据库，导致数据库移植性差，不能随意更换数据库
+执行过程：![img_2.png](img_2.png)：
+    1.读取 MyBatis 的配置文件。mybatis-config.xml 为 MyBatis 的全局配置文件，用于配置数据库连接信息。
+    2.加载映射文件。映射文件即 SQL 映射文件，该文件中配置了操作数据库的 SQL 语句，需要在 MyBatis 配置文件 
+mybatis-config.xml 中加载。mybatis-config.xml 文件可以加载多个映射文件，每个文件对应数据库中的一张表。
+    3.构造会话工厂。通过 MyBatis 的环境配置信息构建会话工厂 SqlSessionFactory。
+    4.创建会话对象。由会话工厂创建 SqlSession 对象，该对象中包含了执行 SQL 语句的所有方法。
+    5.Executor 执行器。MyBatis 底层定义了一个 Executor 接口来操作数据库，它将根据SqlSession 传递的参数动态地生成需要
+执行的 SQL 语句，同时负责查询缓存的维护。
+    6.MappedStatement 对象。在 Executor 接口的执行方法中有一个 MappedStatement 类型 的参数，该参数是对映射信息的封装，
+用于存储要映射的 SQL 语句的 id、参数等信息。
+    7.输入参数映射。输入参数类型可以是 Map、List 等集合类型，也可以是基本数据类型和 POJO 类型。输入参数映射过程类似于JDBC
+对preparedStatement 对象设置参数的过程。
+    8.输出结果映射。输出结果类型可以是 Map、List 等集合类型，也可以是基本数据类型和 POJO类型。输出结果映射过程类似于JDBC
+对结果集的解析过程。
+
+
+
+    
+
 
 
 
