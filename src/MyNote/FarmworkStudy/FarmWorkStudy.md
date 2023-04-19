@@ -66,7 +66,7 @@ MyBatis相关
 需要手动开关 连接；很好的与各种数据库兼容（因为MyBatis使用JDBC来连接数据库，所以只要JDBC支持 的数据库MyBatis都支持）。能
 够与Spring很好的集成；提供映射标签，支持对象与数据库的ORM字段关系映射；提供对象关系映射 标签，支持对象关系组件维护。
     缺点：SQL 语句的编写工作量较大；SQL 语句依赖于数据库，导致数据库移植性差，不能随意更换数据库
-执行过程：![img_2.png](img_2.png)：
+执行过程：![img_2.png](img_2.png)： 
     1.读取 MyBatis 的配置文件。mybatis-config.xml 为 MyBatis 的全局配置文件，用于配置数据库连接信息。
     2.加载映射文件。映射文件即 SQL 映射文件，该文件中配置了操作数据库的 SQL 语句，需要在 MyBatis 配置文件 
 mybatis-config.xml 中加载。mybatis-config.xml 文件可以加载多个映射文件，每个文件对应数据库中的一张表。
@@ -80,6 +80,37 @@ mybatis-config.xml 中加载。mybatis-config.xml 文件可以加载多个映射
 对preparedStatement 对象设置参数的过程。
     8.输出结果映射。输出结果类型可以是 Map、List 等集合类型，也可以是基本数据类型和 POJO类型。输出结果映射过程类似于JDBC
 对结果集的解析过程。
+SpringBoot的核心配置文件有哪几个?他们的区别是什么:
+    application:用于 Spring Boot 项目的自动化配置;
+    bootstrap:添加连接到配置中心的配置属性来加载外部配置中心的配置信息
+SpringBoot的核心注解:
+    @SpringBootApplication:它主要封装了以下几个注解用来启动整个项目，也可以说是spring boot的自动装配规则
+        1、@EnableAutoConfiguration：开启自动配置功能；
+        2、@ComponetScan：扫描组件；扫描当前包及其子包下被@Component，@Controller，@Service，@Repository注解标记
+        的类并纳入到spring容器中进行管理；
+        3、@Target：说明注解的作用目标，默认值为任何元素；
+        4、@Retention：元注解，用来表示注解的[生命周期]；
+        5、@Documented：元注解，可以修饰其他注解；
+        6、@Inherited：元注解，表示子类可继承
+.properties 和 .yml：
+    它们的区别主要是书写格式不同。
+springboot启动流程：
+        Spring Boot项目创建完成会默认生成一个名为 *Application 的入口类，我们是通过该类的main方法启动Spring Boot项目的。
+    在main方法中，通过SpringApplication的静态方法，即run方法进行SpringApplication类的实例化操作，然后再针对实例化对象调用
+    另外一个run方法来完成整个项目的初始化和启动。
+        ![img_3.png](img_3.png)再调用另外一个run方法：![img_4.png](img_4.png)，这俩方法主要构造SpringApplection的
+    实例以及调用实例的run方法
+微服务组件：
+    注册中心：Eureka；（Nacos）
+    网关：Gateway;(Zuul)
+    负载均衡器：Ribbon;
+    服务调用：Feign;
+    熔断限流：Hystix;
+    分布式配置中心：config。
+分布式和springcloud:
+    ![img_5.png](img_5.png)
+        
+
 
 
 
