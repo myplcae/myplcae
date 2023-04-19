@@ -70,4 +70,4 @@ SQL优化：
     （也可使用between，但是between要在唯一索引上分页，不然会出现每页大小不一致的问题）；
     8.用连接查询代替子查询；
     9.索引优化：可以使用explain命令，查看mysql的执行计划。
-分页查询：pagInfo,ROWNUMBER关键字。
+分页查询：pagInfo,ROWNUMBER关键字。(MP分页插件，数据库查询分页使用limit)
