@@ -17,7 +17,7 @@ CAP原则：
         代码实现案例：![img.png](img.png)
         缺陷：Redis 分布式锁不能解决超时的问题，分布式锁有一个超时时间，程序的执行如果超出了锁的超时时间就会出现问题。![img_1.png](img_1.png)
         redis的内存优化:![img_2.png](img_2.png)
-        redis实现方式：哨兵模式、集群模式，都是三个节点，二从一主；主节点挂了从从节点上选。
+        redis实现方式：哨兵模式、集群模式，都是三个节点，一主二从；主节点挂了从从节点上选。
 
 redis的一致性原理：![img_3.png](img_3.png)
 Redis持久化的两种方式：RDB和AOF
@@ -31,6 +31,13 @@ Redis持久化的两种方式：RDB和AOF
         DISCARD：取消事务，放弃执行事务块中的所有命令。
         WATCH：监视一个或多个key,如果事务在执行前，这个key(或多个key)被其他命令修改，则事务被中断，不会执行事务中的任何命令。
         UNWATCH：取消WATCH对所有key的监视。
+    redis   缓存穿透：大量请求根本不存在的key；![img_7.png](img_7.png)因为服务出于容错考虑，当请求从持久层查不到数据则不写入缓存，这将导致请求
+这个不存在的数据每次都要到持久层去查询，失去了缓存的意义。 此时，缓存起不到保护后端持久层的意义，就像被穿透了一样。导致数据库存在被打挂的风险
+            解决方案：![img_8.png](img_8.png)
+            缓存雪崩：redis中大量key集体过期；![img_11.png](img_11.png)
+            解决方案：![img_12.png](img_12.png)
+            缓存击穿：redis中一个热点key过期。![img_9.png](img_9.png)
+            解决方案:![img_10.png](img_10.png)
     Redis key 设置过期时间和永久有效:EXPIRE 和 PERSIST;
     方式二：
         zookeeper实现分布式锁：利用Zookeeper可以创建临时带序号节点的特性来实现一个分布式锁
