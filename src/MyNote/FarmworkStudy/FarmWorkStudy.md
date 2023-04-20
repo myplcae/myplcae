@@ -30,7 +30,7 @@ setter）或者是构造器传递给需要的对象。
     2.构造器注入（Constructor Injection） 
     3.setter 方法注入; 
 springMVC的流程：
-    ![img_1.png](img_1.png)
+    ![img_1.png](img_1.png) 
     1.用户向服务器发送请求，请求被Spring 前端控制Servelt DispatcherServlet(中央处理器)捕获；
     2.DispatcherServlet对请求URL进行解析，得到请求资源标识符（URI）。然后根据该URI，调用HandlerMapping获得该Handler配置
 的所有相关的对象（包括Handler对象以及Handler对象对应的拦截器），最后以HandlerExecutionChain对象的形式返回给
