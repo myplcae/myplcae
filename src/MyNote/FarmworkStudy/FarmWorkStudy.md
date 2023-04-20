@@ -110,6 +110,8 @@ springboot启动流程：
 分布式和springcloud:
     ![img_5.png](img_5.png)
 
+springboot重要的依赖：pom.xml,作为配置文件能够很好的讲一些外部依赖直接引入springboot项目中无需额外的配置。
+
 springboot使用注意事项：
 1.不要在Controller接口中暴露你数据库的信息（特别是例如密码等信息）
 
