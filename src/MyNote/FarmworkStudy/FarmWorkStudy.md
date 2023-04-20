@@ -28,7 +28,7 @@ setter）或者是构造器传递给需要的对象。
 依赖注入的方式：
     1.属性注入（Field Injection）
     2.构造器注入（Constructor Injection） 
-    3.setter 方法注入;
+    3.setter 方法注入; 
 springMVC的流程：
     ![img_1.png](img_1.png)
     1.用户向服务器发送请求，请求被Spring 前端控制Servelt DispatcherServlet(中央处理器)捕获；
