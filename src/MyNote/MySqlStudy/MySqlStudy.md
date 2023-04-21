@@ -28,7 +28,8 @@ MySQL的事务执行顺序：
     C.UndoLog 实现一致性
     Undo Log 给mysql的mvcc 提供了支持， Undo log 主要做用是当事务回滚时用于将数据恢复到修改前的样子。提供的日志记录是和当前执行的sql语句语义相反的日志。
     Undo Log 在mysql中主要起到了两方面的作用: 回滚事务，以及多版本的并发事务，为MVCC提供支持。
-    Undo Log 在事务开始之前产生，当事务提交的时候，并不会立刻的删除相应的Undo Log,此时，InnoDB 储存引擎会将当前事务对应的UnDolog 放入待删除的列表，接下来通过后台线程 purge thread 进行删除处理。
+    Undo Log 在事务开始之前产生，当事务提交的时候，并不会立刻的删除相应的Undo Log,此时，InnoDB 储存引擎会将当前事务对应的UnDolog 放入待删除的列表，接下
+        来通过后台线程 purge thread 进行删除处理。
     d.MVCC 实现隔离性
 分布式事务CAP理论：
     Consistency：一致性；在分布式系统中的所有数据备份，在同一时刻是否同样的值
@@ -56,7 +57,7 @@ join的使用：
     RIGHT JOIN：即使左表中没有匹配，也从右表返回所有的行
     FULL JOIN：只要其中一个表中存在匹配，则返回行
 SQL优化：
-    1.避免使用 select *；
+    1.避免使用 select *；.
     2.用union all代替union：union all可以直接获取包含重复数据的所有数据；union则不会获取重复数据；
     3.小表驱动大表：假如有order和user两张表，其中order表有10000条数据，而user表有100条数据，
     可以使用in关键字实现：select 字段,字段,字段,字段 from order where user_id in (select id from user where status=1)，in 适用于左边大表，右边小表
