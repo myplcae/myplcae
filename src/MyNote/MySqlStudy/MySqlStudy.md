@@ -57,7 +57,7 @@ join的使用：
     RIGHT JOIN：即使左表中没有匹配，也从右表返回所有的行
     FULL JOIN：只要其中一个表中存在匹配，则返回行
 SQL优化：
-    1.避免使用 select *；.
+    1.避免使用 select *；
     2.用union all代替union：union all可以直接获取包含重复数据的所有数据；union则不会获取重复数据；
     3.小表驱动大表：假如有order和user两张表，其中order表有10000条数据，而user表有100条数据，
     可以使用in关键字实现：select 字段,字段,字段,字段 from order where user_id in (select id from user where status=1)，in 适用于左边大表，右边小表
