@@ -51,6 +51,13 @@ Redis持久化的两种方式：RDB和AOF
         代码：![img_5.png](img_5.png),核心方法![img_6.png](img_6.png)
 学习链接：https://blog.csdn.net/qq837993702/article/details/128069225
 
+redis能存哪些数据：//参考链接      https://www.cnblogs.com/to-here/p/15493452.html
+    String（字符串）
+    List（列表）
+    Hash（字典）
+    Set（集合）
+    Sorted Set（有序集合）
+
 
         
     

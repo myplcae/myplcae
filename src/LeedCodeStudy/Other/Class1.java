@@ -1,4 +1,4 @@
-package src.LeedCodeStudy;
+package src.LeedCodeStudy.Other;
 
 
 import java.util.Scanner;
