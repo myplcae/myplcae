@@ -14,7 +14,21 @@
     cp 复制文件
     移动/重命名  mv
     pwd 显示当前目录
+    atop 查看CPU使用率
+    glances -w 查看CPU利用率
 查看线程：
     ps![img.png](img.png)
     top![img_1.png](img_1.png)
+
+# 开启防火墙
+systemctl start 服务名
+# 关闭防火墙(服务器重启后还会自动开启防火墙)
+systemctl stop firewalld
+# 禁止防火墙开机启动
+systemctl disable firewalld
+
+
+
+
+
     
