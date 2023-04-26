@@ -4,7 +4,7 @@ import java.util.Date;
 //spring里边的bean除了使用单例模式之外还使用了原型模式
 //同时原型模式还会跟工厂模式打交道
 //客户端：深克隆
-public class Bilibili {
+public class Test {
 
     public static void main(String[] args) throws CloneNotSupportedException {
         //原型对象

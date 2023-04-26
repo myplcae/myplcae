@@ -1,6 +1,6 @@
 package src.com.Designpattern.create.factory.simplefactory;
 
-public class Consumer {
+public class Test {
 
     public static void main(String[] args) {
         //接口，所有的实现类

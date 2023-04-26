@@ -1,6 +1,6 @@
 package src.com.Designpattern.structure.decorator;
 
-public class Decora {
+public class Test {
     /**
      * 例：装饰一张桌子
      * */

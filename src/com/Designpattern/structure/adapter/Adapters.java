@@ -10,7 +10,7 @@ public class Adapters extends Adapter implements NetToUsb{
 
     public static void main(String[] args) {
         //电脑，适配器，网线
-        Computer computer = new Computer();
+        TestComputer computer = new TestComputer();
         Adapter adapter = new Adapter();
         //Adapters adapters = new Adapters();
         Adapters2 adapters = new Adapters2(adapter);

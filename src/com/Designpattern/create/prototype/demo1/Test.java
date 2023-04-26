@@ -3,7 +3,7 @@ package src.com.Designpattern.create.prototype.demo1;
 import java.util.Date;
 
 //客户端：克隆
-public class Bilibili {
+public class Test {
 
     public static void main(String[] args) throws CloneNotSupportedException {
         //原型对象
