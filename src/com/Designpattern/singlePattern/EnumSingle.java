@@ -2,7 +2,7 @@ package src.com.Designpattern.singlePattern;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-
+//枚举
 public enum EnumSingle {
     INSTANCE;
     public EnumSingle getInstance(){
