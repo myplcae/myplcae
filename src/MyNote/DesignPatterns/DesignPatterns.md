@@ -1,18 +1,18 @@
 1.二十三种设计模式![img.png](img.png)
 2.面向对象OOP七大设计原则![img_1.png](img_1.png)
-
-一、单例模式!singlePayyern
+一、创建型模式
+1、单例模式!singlePayyern
     如源码所讲，不能用反射破坏枚举[img_2.png](img_2.png)
     单例模式和多例模式有什么区别：![img_4.png](img_4.png)
-二、工厂模式：实现创建者和调用者的分离![img_3.png](img_3.png)![img_5.png](img_5.png)![img_6.png](img_6.png)
+2、工厂模式：实现创建者和调用者的分离![img_3.png](img_3.png)![img_5.png](img_5.png)![img_6.png](img_6.png)
         核心本质：实例化对象不使用new，使用工厂方法代替
                 将选择实现类，创建对象统一管理和控制，从而将调用者和实现类解耦
-           抽象工厂模式![img_7.png](img_7.png)![img_8.png](img_8.png)
+           3、抽象工厂模式![img_7.png](img_7.png)![img_8.png](img_8.png)
                 优缺点：![img_9.png](img_9.png)
                 围绕一个超级工厂创建其他工厂，该超级工厂成为其他工厂的工厂
-           简单工厂模式（静态工厂模式）
+              简单工厂模式（静态工厂模式）
                 用来生产统一结构等级中的任意产品
-           工厂方法模式
+              工厂方法模式
                 用来生产同一结构等级中的固定产品
         工厂模式满足：
                    开闭原则：一个软件的实体应当对扩展开放，对修改关闭
@@ -24,12 +24,29 @@
         管理复杂度：simple
         根据设计原则：优先使用工厂方法模式
         根据实际业务：简单工厂模式
-三、建造者模式
+4、建造者模式
         ![img_10.png](img_10.png)
         ![img_11.png](img_11.png)
         ![img_12.png](img_12.png)
     建造者模式的优缺点：![img_13.png](img_13.png)
     建造者模式应用场景和其他模式比较![img_14.png](img_14.png)
 
-四、原型模式
+5、原型模式
     深克隆和浅克隆![img_15.png](img_15.png)
+
+二、结构性模式
+        ![img_16.png](img_16.png)
+        1、适配器模式![img_17.png](img_17.png)adapter
+            优缺点和适用场景：![img_18.png](img_18.png)
+        2、代理模式优缺点：![img_19.png](img_19.png)agent
+        3、桥接模式![img_20.png](img_20.png)
+            优缺点和适用场景：![img_21.png](img_21.png)![img_22.png](img_22.png)
+        4、装饰器模式
+            装饰器模式主要解决继承关系过于复杂的问题，通过组合代替继承，主要用来给原始类增强功能
+            优缺点：![img_23.png](img_23.png)
+        5、组合模式（分为透明组合模式和安全组合模式）
+            特点：![img_24.png](img_24.png)
+        6、外观模式
+                解释：![img_25.png](img_25.png)![img_26.png](img_26.png)
+        7、享元模式
+                解释：![img_27.png](img_27.png)![img_28.png](img_28.png)
