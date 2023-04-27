@@ -3,6 +3,7 @@ package src.com.Designpattern.create.singlePattern;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 //枚举
+//单例模式
 public enum EnumSingle {
     INSTANCE;
     public EnumSingle getInstance(){

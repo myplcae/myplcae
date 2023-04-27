@@ -1,5 +1,5 @@
 package src.com.Designpattern.structure.combination;
-
+//组合模式
 public class TestCba {
 
     public static void main(String[] args) {

@@ -1,5 +1,5 @@
 package src.com.Designpattern.structure.agent;
-
+//代理模式
 public class Testagent {
 
     public static void main(String[] args) {

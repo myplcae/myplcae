@@ -1,5 +1,5 @@
 package src.com.Designpattern.create.builder.demo2;
-
+//建造者模式2
 public class Test {
 
     public static void main(String[] args) {

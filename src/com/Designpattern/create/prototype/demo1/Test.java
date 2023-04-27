@@ -1,7 +1,7 @@
 package src.com.Designpattern.create.prototype.demo1;
 
 import java.util.Date;
-
+//原型模式
 //客户端：克隆
 public class Test {
 

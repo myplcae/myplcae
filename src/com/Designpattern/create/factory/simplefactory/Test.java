@@ -1,5 +1,5 @@
 package src.com.Designpattern.create.factory.simplefactory;
-
+//简单工厂模式
 public class Test {
 
     public static void main(String[] args) {

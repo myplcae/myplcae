@@ -1,5 +1,5 @@
 package src.com.Designpattern.structure.bridge;
-
+//桥接模式
 public class TestBridge {
 
     public static void main(String[] args) {
