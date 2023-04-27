@@ -1,4 +1,4 @@
-package src.LeedCodeStudy.HuaWeiClass.easy;
+package src.LeedCodeStudy.HuaWeiClass.easy.day1;
 
 import java.util.BitSet;
 import java.util.Scanner;
