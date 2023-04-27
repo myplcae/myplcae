@@ -1,14 +1,14 @@
-1.二十三种设计模式![img.png](img.png)
-2.面向对象OOP七大设计原则![img_1.png](img_1.png)
+1.二十三种设计模式![img.png](image/img.png)
+2.面向对象OOP七大设计原则![img_1.png](image/img_1.png)
 一、创建型模式
 1、单例模式!singlePayyern
-    如源码所讲，不能用反射破坏枚举[img_2.png](img_2.png)
-    单例模式和多例模式有什么区别：![img_4.png](img_4.png)
-2、工厂模式：实现创建者和调用者的分离![img_3.png](img_3.png)![img_5.png](img_5.png)![img_6.png](img_6.png)
+    如源码所讲，不能用反射破坏枚举[img_2.png](image/img_2.png)
+    单例模式和多例模式有什么区别：![img_4.png](image/img_4.png)
+2、工厂模式：实现创建者和调用者的分离![img_3.png](image/img_3.png)![img_5.png](image/img_5.png)![img_6.png](image/img_6.png)
         核心本质：实例化对象不使用new，使用工厂方法代替
                 将选择实现类，创建对象统一管理和控制，从而将调用者和实现类解耦
-           3、抽象工厂模式![img_7.png](img_7.png)![img_8.png](img_8.png)
-                优缺点：![img_9.png](img_9.png)
+           3、抽象工厂模式![img_7.png](image/img_7.png)![img_8.png](image/img_8.png)
+                优缺点：![img_9.png](image/img_9.png)
                 围绕一个超级工厂创建其他工厂，该超级工厂成为其他工厂的工厂
               简单工厂模式（静态工厂模式）
                 用来生产统一结构等级中的任意产品
@@ -25,40 +25,63 @@
         根据设计原则：优先使用工厂方法模式
         根据实际业务：简单工厂模式
 4、建造者模式
-        ![img_10.png](img_10.png)
-        ![img_11.png](img_11.png)
-        ![img_12.png](img_12.png)
-    建造者模式的优缺点：![img_13.png](img_13.png)
-    建造者模式应用场景和其他模式比较![img_14.png](img_14.png)
+        ![img_10.png](image/img_10.png)
+        ![img_11.png](image/img_11.png)
+        ![img_12.png](image/img_12.png)
+    建造者模式的优缺点：![img_13.png](image/img_13.png)
+    建造者模式应用场景和其他模式比较![img_14.png](image/img_14.png)
 
 5、原型模式
-    深克隆和浅克隆![img_15.png](img_15.png)
+    深克隆和浅克隆![img_15.png](image/img_15.png)
 
 二、结构性模式
-        ![img_16.png](img_16.png)
-        1、适配器模式![img_17.png](img_17.png)adapter
-            优缺点和适用场景：![img_18.png](img_18.png)
-        2、代理模式优缺点：![img_19.png](img_19.png)agent
-        3、桥接模式![img_20.png](img_20.png)
-            优缺点和适用场景：![img_21.png](img_21.png)![img_22.png](img_22.png)
+        ![img_16.png](image/img_16.png)
+        1、适配器模式![img_17.png](image/img_17.png)adapter
+            优缺点和适用场景：![img_18.png](image/img_18.png)
+        2、代理模式优缺点：![img_19.png](image/img_19.png)agent
+        3、桥接模式![img_20.png](image/img_20.png)
+            优缺点和适用场景：![img_21.png](image/img_21.png)![img_22.png](image/img_22.png)
         4、装饰器模式
             装饰器模式主要解决继承关系过于复杂的问题，通过组合代替继承，主要用来给原始类增强功能
-            优缺点：![img_23.png](img_23.png)
+            优缺点：![img_23.png](image/img_23.png)
         5、组合模式（分为透明组合模式和安全组合模式）
-            特点：![img_24.png](img_24.png)
+            特点：![img_24.png](image/img_24.png)
         6、外观模式
-                解释：![img_25.png](img_25.png)![img_26.png](img_26.png)
+                解释：![img_25.png](image/img_25.png)![img_26.png](image/img_26.png)
         7、享元模式
-                解释：![img_27.png](img_27.png)![img_28.png](img_28.png)
+                解释：![img_27.png](image/img_27.png)![img_28.png](image/img_28.png)
 三、行为型模式：
         1、模板方法模式
+            定义：![img_29.png](image/img_29.png)
+            主要角色：![img_30.png](image/img_30.png)![img_31.png](image/img_31.png)
         2、命令模式
+            定义：![img_32.png](image/img_32.png)
+            主要角色和结构：![img_33.png](image/img_33.png)
         3、迭代器模式
+            定义：![img_34.png](image/img_34.png)
+            主要角色和结构：![img_36.png](image/img_36.png)![img_35.png](image/img_35.png)
         4、观察者模式
+            定义和角色：![img_37.png](image/img_37.png)
+            结构和场景：![img_38.png](image/img_38.png)
         5、中介者模式
+            定义和角色：![img_39.png](image/img_39.png)![img_41.png](image/img_41.png)
+            结构和场景：![img_42.png](image/img_42.png)
         6、备忘录模式
+            定义和角色：![img_43.png](image/img_43.png)
+            结构和场景：![img_44.png](image/img_44.png)![img_45.png](image/img_45.png)
         7、解释器模式
+            定义和角色：![img_46.png](image/img_46.png)![img_47.png](image/img_47.png)
+            结构和场景：![img_48.png](image/img_48.png)
         8、状态模式
+            定义和角色：![img_49.png](image/img_49.png)![img_50.png](image/img_50.png)
+            结构和场景：![img_51.png](image/img_51.png)
+            策略模式和状态模式比较：后者更倾向于算法上的修改，并且可以在运动时进行任意的动态替换。后者主要是改变状态来影响其他行为
         9、策略模式
+            定义和角色：![img_52.png](image/img_52.png)![img_53.png](image/img_53.png)
+            结构和场景：
         10、职责链模式
+            定义和角色：![img_54.png](image/img_54.png)![img_55.png](image/img_55.png)
+            结构和场景：
         11、访问者模式
+            定义和角色：![img_56.png](image/img_56.png)![img_58.png](image/img_58.png)
+            结构和场景：![img.png](image/img.png)缺点：![img.png](image/img.png)
