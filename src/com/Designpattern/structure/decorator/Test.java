@@ -1,5 +1,5 @@
 package src.com.Designpattern.structure.decorator;
-
+//装饰器模式
 public class Test {
     /**
      * 例：装饰一张桌子

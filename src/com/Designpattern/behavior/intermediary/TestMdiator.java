@@ -1,7 +1,7 @@
 package src.com.Designpattern.behavior.intermediary;
 
 import java.util.List;
-
+//中介者模式
 public class TestMdiator {
 
     public static void main(String[] args) {

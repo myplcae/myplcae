@@ -1,5 +1,5 @@
 package src.com.Designpattern.behavior.command;
-
+//命令模式
 public class TestCommand {
 
     public static void main(String[] args) {

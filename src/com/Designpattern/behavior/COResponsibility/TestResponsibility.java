@@ -1,5 +1,5 @@
 package src.com.Designpattern.behavior.COResponsibility;
-
+//责任链模式
 public class TestResponsibility {
 
     public static void main(String[] args) {

@@ -1,5 +1,5 @@
 package src.com.Designpattern.create.factory.methodfactory;
-
+//工厂方法模式
 public class Test {
 
     public static void main(String[] args) {

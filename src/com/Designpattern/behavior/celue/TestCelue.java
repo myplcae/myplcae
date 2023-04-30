@@ -1,5 +1,5 @@
 package src.com.Designpattern.behavior.celue;
-
+//策略模式
 public class TestCelue {
 
     public static void main(String[] args) {

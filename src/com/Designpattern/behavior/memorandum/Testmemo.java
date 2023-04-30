@@ -1,5 +1,5 @@
 package src.com.Designpattern.behavior.memorandum;
-
+//备忘录模式
 public class Testmemo {
 
     public static void main(String[] args) {
