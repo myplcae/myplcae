@@ -1,4 +1,5 @@
 1.二十三种设计模式![img.png](image/img.png)
+笔记参考链接：https://www.runoob.com/design-pattern/factory-pattern.html
 2.面向对象OOP七大设计原则![img_1.png](image/img_1.png)
 一、创建型模式
 1、单例模式!singlePayyern
