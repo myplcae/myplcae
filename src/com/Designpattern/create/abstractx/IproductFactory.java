@@ -1,4 +1,4 @@
-package src.com.Designpattern.create.factory.abstractx;
+package src.com.Designpattern.create.abstractx;
 //抽象产品工厂
 public interface IproductFactory {
 

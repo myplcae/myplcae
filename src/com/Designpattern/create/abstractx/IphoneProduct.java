@@ -1,4 +1,4 @@
-package src.com.Designpattern.create.factory.abstractx;
+package src.com.Designpattern.create.abstractx;
 //手机产品接口
 public interface IphoneProduct {
 

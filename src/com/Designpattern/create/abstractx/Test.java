@@ -1,4 +1,4 @@
-package src.com.Designpattern.create.factory.abstractx;
+package src.com.Designpattern.create.abstractx;
 //抽象工厂模式
 public class Test {
     public static void main(String[] args) {

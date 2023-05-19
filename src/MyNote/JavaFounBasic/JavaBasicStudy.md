@@ -100,6 +100,29 @@ JDK1.8新功能：
 互斥锁（synchronized）：当使用多个synchronized锁定多个代码片段，并且指定的都是同一个同步监视器对象时，这些代码片段之间就是互斥的，多个线程不能同时
                     执行它们
 
+集合相关：![img_7.png](img_7.png)
+        List (顺序性强)：存储的元素是有序的，可重复的；
+        Set(每个元素都是独一无二的)：无序，不可重复；
+        Map(K-V结构)：K是无序的不可重复的，V是无序的，可重复的，一个K只能对应一个V；
+    ArrayList和LinkedList:
+        安全性：由于二者都是不同步的，所以都不能保证线程安全；
+        底层数据结构：ArrayList底层是Object数组，LinkedList底层是双向数据链表；
+        因此会导致ArrayList的插入和删除会比LinkedList慢，但是查询会比后者快
+        从内存上看，ArrayList的空间主要浪费在list列表的结尾会预留一定容量的空间，而Linkedlist每一个元素所消耗的空间都会比ArrayList多；
+HashMap和HashTab的区别：
+        HashMap线程不安全，HashTab源码有synchronized关键字修饰，所以是线程安全的；
+        由于关键字的区别，所以HashMap的效率会比HashTab高一些；
+        HashMap可以存K为null的值，也可以存储V为null的值，null作为K时只能有一个，HashTable不允许有K或者V为空的值；
+        扩容机制不同（HashMap是2的幂次方，HashTable是2n+1）;
+        底层结构不同；
+Hashmap和HashSet区别：
+        ![img_6.png](img_6.png)
+
+ThreadLocal:
+        让每个线程绑定自己的值，类似于一个可以存东西的盒子;
+        创建ThreadLocal变量时，在访问这个变量的每个线程都会有一个本地副本，可以用get、set方法去获取默认值更改为当前线程所存的副本值，从而避免线程
+    安全问题
+
 
 
 

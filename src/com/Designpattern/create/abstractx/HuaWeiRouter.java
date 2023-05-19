@@ -1,4 +1,4 @@
-package src.com.Designpattern.create.factory.abstractx;
+package src.com.Designpattern.create.abstractx;
 
 public class HuaWeiRouter implements IRouterProducter{
     @Override
