@@ -123,6 +123,11 @@ ThreadLocal:
         创建ThreadLocal变量时，在访问这个变量的每个线程都会有一个本地副本，可以用get、set方法去获取默认值更改为当前线程所存的副本值，从而避免线程
     安全问题
 
+二分查找代码：
+            ![img_8.png](img_8.png)
+![img_9.png](img_9.png)
+![img_10.png](img_10.png)
+
 
 
 

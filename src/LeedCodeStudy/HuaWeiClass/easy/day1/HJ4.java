@@ -9,6 +9,9 @@ import java.util.Scanner;
  * 输出：。只输出八位，不足八位的用0填充
  * */
 public class HJ4 {
+    /**
+     * 思路：使用substring进行分割
+     * */
     public static void main(String[] args) {
         //输入
         Scanner in = new Scanner(System.in);
