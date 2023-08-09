@@ -1,4 +1,4 @@
-package src.LeedCodeStudy.HuaWeiClass.easy.day1;
+package src.LeedCodeStudy.HuaWeiClass.day1;
 
 import java.util.HashMap;
 import java.util.Map;

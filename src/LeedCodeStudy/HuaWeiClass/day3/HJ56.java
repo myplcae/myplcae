@@ -1,4 +1,4 @@
-package src.LeedCodeStudy.HuaWeiClass.easy.day3;
+package src.LeedCodeStudy.HuaWeiClass.day3;
 
 import java.util.Scanner;
 
