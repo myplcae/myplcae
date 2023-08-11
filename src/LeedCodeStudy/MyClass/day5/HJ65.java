@@ -45,7 +45,6 @@ public class HJ65 {
                     start = j;
                     break;//找到了就停
                 }
-                
             }
         }
         System.out.println(shortStr.substring(start,start+maxlen));
