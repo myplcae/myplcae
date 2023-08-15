@@ -21,7 +21,7 @@ public class HJ87 {
             //长度打分
             if (length <= 4)//小于等于4 个字符加5分
                     score += 5;
-            else if (length > 4 && length < 8)// 5 到7 字符加10分
+            else if (length < 8)// 5 到7 字符加10分
                     score += 10;
             else//大于等于8 个字符加25分
                     score += 25;
@@ -30,12 +30,12 @@ public class HJ87 {
             int lowchar = 0;
             int numchar = 0;
             int charnum = 0;
-            for (int i = 0; i < length; i++) {
-                if (Character.isUpperCase(c[i]))
+            for (char value : c) {
+                if (Character.isUpperCase(value))
                     ++upchar;
-                else if (Character.isLowerCase(c[i]))
+                else if (Character.isLowerCase(value))
                     ++lowchar;
-                else if (Character.isDigit(c[i]))
+                else if (Character.isDigit(value))
                     ++numchar;
                 else
                     ++charnum;
@@ -45,22 +45,16 @@ public class HJ87 {
                 score += 10;
             else if(upchar > 0 && lowchar > 0)
                 score += 20;
-            else
-                score += 0;
             //数字分数
             if(numchar == 1)
                 score += 10;
             else if(numchar > 1)
                 score += 20;
-            else
-                score += 0;
             //符号分数
             if(charnum ==1)
                 score += 10;
             else if(charnum > 1)
                 score += 25;
-            else
-                score += 0;
             //奖励分数
             if(numchar >0 && upchar >0 && lowchar > 0 && charnum > 0)
                 score += 5;
