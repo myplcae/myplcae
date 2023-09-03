@@ -15,6 +15,9 @@ public class Book {
         this.aothor = aothor;
     }
 
+    public Book(String name, int price) {
+    }
+
     public String getName() {
         return name;
     }
