@@ -29,7 +29,7 @@ public class MapMethod {
         System.out.println(map.isEmpty());
         //clear, 清除
         //map.clear();
-        //System.out.println("map = " + map);
+        System.out.println("map = " + map);
         //containKey, 查找键是否存在，键为null时会出现错误结果
         /**
          * 上个bug的源码解释：
