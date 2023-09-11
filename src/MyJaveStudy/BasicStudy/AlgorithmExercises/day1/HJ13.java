@@ -15,6 +15,7 @@ public class HJ13 {
         Scanner in = new Scanner(System.in);
         //定义空格
         String str = in.nextLine();
+        //定义每个空格之间为一个连续的字符串，也可以理解为连续的字符为一个位置符号
         String[] s = str.split(" ");
         //遍历判断
         for (int i = s.length - 1; i >= 0; i--) {

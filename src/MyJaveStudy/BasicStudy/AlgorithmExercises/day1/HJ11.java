@@ -10,10 +10,21 @@ import java.util.Scanner;
  * 思路：通过string的reverse方法去逆序
  * */
 public class HJ11 {
+    //快捷方式直接调用StringBuffer类里的reverse方法
+//    public static void main(String[] args) {
+//        Scanner in= new Scanner(System.in);
+//        String str = in.nextLine();
+//        StringBuffer str1 =new StringBuffer(str);
+//        System.out.println(str1.reverse());
+//    }
+    //正常方法，直接将字符串转为倒叙
     public static void main(String[] args) {
         Scanner in= new Scanner(System.in);
-        String str = in.nextLine();
-        StringBuffer str1 =new StringBuffer(str);
-        System.out.println(str1.reverse());
+        while (in.hasNext()){
+            String a = in.nextLine();
+            for (int i = a.length()-1; i >=0 ; i--) {
+                System.out.print(a.charAt(i));
+            }
+        }
     }
 }

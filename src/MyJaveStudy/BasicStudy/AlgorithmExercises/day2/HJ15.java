@@ -9,12 +9,27 @@ import java.util.Scanner;
  * 思路：先用Integer.toBinaryString方法转成二进制，再通过替换1为空，再通过长度相减得到1的个数
  * */
 public class HJ15 {
-
+    //方法1：通过String类里的replaceAll替换所有的1之后长度相减
+//    public static void main(String[] args) {
+//        Scanner in = new Scanner(System.in);
+//        int x = in.nextInt();
+//        String str = Integer.toBinaryString(x);
+//        String str1 = str.replaceAll("1", "");
+//        System.out.println(str.length()-str1.length());
+//    }
+    //方法2：用一个常量去数1的个数
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int x = in.nextInt();
-        String str = Integer.toBinaryString(x);
-        String str1 = str.replaceAll("1", "");
-        System.out.println(str.length()-str1.length());
+        while (in.hasNext()){
+            int a = in.nextInt();
+            int count = 0;
+            String str = Integer.toBinaryString(a);
+            for (int i = 0; i < str.length(); i++) {
+                if (str.charAt(i) == '1'){
+                    count++;
+                }
+            }
+            System.out.println(count);
+        }
     }
 }
