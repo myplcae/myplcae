@@ -40,12 +40,12 @@ public class HJ16 {
             int q = Integer.parseInt(arr[2]);
             //存当前钱数
             if (flag) {
-                if (v * dw != 0) {
+                if (v % dw != 0) {
                     flag = false;//如果价格不是100的倍数重置flag为false
                     dw = 10;//是不是十的倍数
                     for (int j = 1; j < i; j++) {
                         //存钱数
-                        A[i].setV(A[j].v * 10);
+                        A[j].setV(A[j].v * 10);//应该用刚定义的j，至于为什么明天看了再试
                     }
                 }
             }
@@ -109,6 +109,7 @@ public class HJ16 {
                 if (A[i].q > 0) { //如果商品是附件，满意度计算为
                     dp[j][i] = dp[j][i - 1];
                 } else { //如果是主件
+                    dp[j][i]=dp[j][i-1];
                     if (j >= v && v != -1)
                         dp[j][i] = Math.max(dp[j][i], dp[j  -v][i - 1] + tempdp);
                     if (j >= v1 && v1 != -1)
