@@ -1,0 +1,7 @@
+![img.png](image/img.png)
+完全背包问题：![img.png](image/img1.png)
+    优化：![img.png](image/img2.png)
+    二次优化：![img.png](image/img3.png)
+多重背包问题：![img.png](image/img4.png)
+    优化：![img.png](image/img5.png)
+分组背包问题：![img.png](image/img6.png)
