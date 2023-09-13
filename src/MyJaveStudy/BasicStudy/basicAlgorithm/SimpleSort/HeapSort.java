@@ -1,4 +1,4 @@
-package src.MyJaveStudy.BasicStudy.basicAlgorithm;
+package src.MyJaveStudy.BasicStudy.basicAlgorithm.SimpleSort;
 
 import java.util.Arrays;
 

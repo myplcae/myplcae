@@ -1,6 +1,5 @@
-package src.MyJaveStudy.BasicStudy.basicAlgorithm;
+package src.MyJaveStudy.BasicStudy.basicAlgorithm.SimpleSort;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 //归并排序

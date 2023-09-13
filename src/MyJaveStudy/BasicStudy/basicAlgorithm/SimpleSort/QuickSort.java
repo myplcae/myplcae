@@ -1,4 +1,4 @@
-package src.MyJaveStudy.BasicStudy.basicAlgorithm;
+package src.MyJaveStudy.BasicStudy.basicAlgorithm.SimpleSort;
 //快排
 
 public class QuickSort {

@@ -1,4 +1,4 @@
-package src.MyJaveStudy.BasicStudy.basicAlgorithm;
+package src.MyJaveStudy.BasicStudy.basicAlgorithm.SimpleSort;
 //二分查找
 public class BinarySort {
     /**

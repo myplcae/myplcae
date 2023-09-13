@@ -22,7 +22,6 @@ public class HJ23 {
         while (in.hasNextLine()){
             String str = in.nextLine();
             String result = solution.delete(str);
-
             System.out.println(result);
         }
 
