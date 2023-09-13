@@ -14,11 +14,11 @@ public class HJ40 {
         Scanner in= new Scanner(System.in);
         String str = in.nextLine();
         String str1 = str.replaceAll("[A-Z]+|[a-z]+","");
-        System.out.println("字母字符有："+(str.length()-str1.length())+"个");
+        System.out.println((str.length()-str1.length()));
         String str2 = str1.replaceAll(" ","");
-        System.out.println("空格字符有："+(str1.length()-str2.length())+"个");
+        System.out.println((str1.length()-str2.length()));
         String str3 = str2.replaceAll("[0-9]+","");
-        System.out.println("数字字符有"+(str2.length()-str3.length())+"个"+"\n"+"还剩"+str3.length()+"个字符");
+        System.out.println((str2.length()-str3.length())+"\n"+str3.length());
     }
 }
 
