@@ -15,16 +15,16 @@ MySQL的四大特性(ACID)：
     一致性：事务追求的最终目标，一致性的实现既需要数据库层面的保障，也需要应用层面的保障
 MySQL的事务执行顺序：
     客户端->服务端：
-        ![img.png](img.png)
+        ![img.png](image/img.png)
     RedoLog （重做日志）实现原子性和持久性，RedoLog 保证了mysql的事务的原子性和持久性，
     redolog 主要记录物理日志，也就是说，对磁盘的数据进行的修改操作.
-        ![img_1.png](img_1.png)
+        ![img_1.png](image/img_1.png)
     redo的刷盘规则：
         1) 开启事务，发出提交事务指令后是否刷新日志，由变量 innodb_flush_log_at_trx_commit 决定
         2）每秒钟刷新一次，刷新日志频率由 innodb_flush_log_at_timeout 值 决定，默认1s.
         3) 当事务存在checkpoint 的时候，在一定程度上代表了刷鞋到磁盘的日志所处的LSN的位置。其中LSN(Log sequence Number) 标识日志的逻辑序列号。
            刷新Redo 日志的方式由innodb_flush_log_at_trx_commit 决定的
-           ![img_2.png](img_2.png)
+           ![img_2.png](image/img_2.png)
     C.UndoLog 实现一致性
     Undo Log 给mysql的mvcc 提供了支持， Undo log 主要做用是当事务回滚时用于将数据恢复到修改前的样子。提供的日志记录是和当前执行的sql语句语义相反的日志。
     Undo Log 在mysql中主要起到了两方面的作用: 回滚事务，以及多版本的并发事务，为MVCC提供支持。
