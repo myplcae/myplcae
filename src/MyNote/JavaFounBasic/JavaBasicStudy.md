@@ -65,6 +65,7 @@ sleep和wait有什么区别：
 一起使用。wait 方法属于 Object 类的方法，而 sleep 属于 Thread 类的方法，sleep 方法具有主动唤醒功能，而不传递任何参数的 
 wait 方法只能被动的被唤醒，wait 方法会主动的释放锁，而 sleep 方法则不会，调用 sleep 方法线程会进入 TIMED_WAITING 有时限
 等待状态，而调用无参数的 wait 方法，线程会进入 WAITING 无时限等待状态。
+    调用者不同，wait是被锁调用，sleep是被线程调用
 
 死锁：
     多个线程互相拥有对方资源导致形成僵持
@@ -127,6 +128,7 @@ ThreadLocal:
             ![img_8.png](img_8.png)
 ![img_9.png](img_9.png)
 ![img_10.png](img_10.png)
+
 
 
 
