@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.StringJoiner;
 
 //小写比大写多则把所有大写字母转为小写，大写比小写多则把所有字母转为大写，如果大小写字母数相同则不做转换，第一个子串除外
-public class test6 {
+public class Test6 {
     static int[] fact;
 
     public static void main(String[] args) {

@@ -24,7 +24,7 @@ public class Test12 {
         Collections.addAll(set,tmp);
         //StringJoiner
         StringJoiner sj = new StringJoiner(" ");
-        set.stream().filter(s -> s.startsWith(str2)).forEach(s -> sj.add(s));
+        set.stream().filter(s -> s.startsWith(str2)).forEach(sj::add);
         String ans = sj.toString();
         if (ans.length() > 0){
             return ans;

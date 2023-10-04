@@ -1,13 +1,10 @@
 package src.AlgorithmStudy.thelasttest.day01.onehundredpoint;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Scanner;
-import java.util.StringJoiner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 //
-public class test3 {
+public class Test3 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String[] vlanArr = in.nextLine().split(",");
@@ -17,7 +14,7 @@ public class test3 {
 
     private static String getResult(String[] vlanArr, int remove) {
         LinkedList<Integer[]> vlanlist = Arrays.stream(vlanArr).map(v->Arrays.stream(v.split("-"))
-                                        .map(Integer::parseInt).toArray(Integer[]::new)).sorted((a,b)->a[0]-b[0])
+                                        .map(Integer::parseInt).toArray(Integer[]::new)).sorted(Comparator.comparingInt(a -> a[0]))
                                         .collect(Collectors.toCollection(LinkedList::new));
         for (int i = 0; i < vlanlist.size(); i++) {
             Integer[] vlan = vlanlist.get(i);
@@ -45,7 +42,7 @@ public class test3 {
         vlanlist.stream().map(vlan ->{
             StringJoiner sj = new StringJoiner("-");
             for (Integer v:vlan)
-                sj.add(v + "");
+                sj.add(String.valueOf(v));
             return sj.toString();
         }).forEach(ans::add);
         return ans.toString();

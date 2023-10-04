@@ -22,7 +22,7 @@ public class Test2 {
             int p1 = ip[0], p2 = ip[1], p3 = ip[2], p4 = ip[3];
             if (p1 >= 0 && p1 <= 128 && p2 >= 0 && p2 <= 255 && p3 >= 0 && p3 <= 255 && p4 >= 0 && p4 <= 255) {//每一段的数字是不是在0-255内
                 String tmp = getHexString(p1) + getHexString(p2) + getHexString(p3) + getHexString(p4);//用string去定义结果
-                return Long.parseLong(tmp, 16) + "";
+                return String.valueOf(Long.parseLong(tmp, 16));
             } else {
                 return "invalid IP";
             }

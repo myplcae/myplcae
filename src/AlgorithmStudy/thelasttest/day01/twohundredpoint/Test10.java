@@ -20,7 +20,7 @@ public class Test10 {
         StringJoiner sj = new StringJoiner(",");
         for (int i = 0; i < arr.length; i++) {
             if (isMatch(arr[i],reg))
-                sj.add(i + "");
+                sj.add(String.valueOf(i));
         }
         if (sj.length() == 0)
             return "-1";

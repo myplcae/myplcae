@@ -91,7 +91,7 @@ public class Test4 {
             case 12:return "Q";
             case 13:return "K";
             case 14:return "A";
-            default:return num + "";
+            default:return String.valueOf(num);
         }
     }
 }

@@ -34,9 +34,6 @@ public class Test9 {
                 prefix.get(c).add(word);
             }
         }
-        /**
-         * ----------------------------------------空了看看这里的源码----------------------------------------------------------------------
-         * */
         for (Character c : prefix.keySet()) {
             //比较器比较
             prefix.get(c).sort((a, b) -> a.length()!=b.length()?b.length()-a.length():a.compareTo(b));

@@ -22,7 +22,7 @@ public class Test4 {
                 if (flag){
                     negative.append(c);
                 }else {
-                    ans = ans.add(new BigInteger(c +""));
+                    ans = ans.add(new BigInteger(String.valueOf(c)));
                 }
             }else {
                 if (flag){

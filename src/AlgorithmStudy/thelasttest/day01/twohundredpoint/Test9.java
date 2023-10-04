@@ -30,7 +30,7 @@ public class Test9 {
             faultNum ^= weights[i];
         }
         if (faultNum == 0){
-            return trueNum - min + "";
+            return String.valueOf(trueNum - min);
         }else {
             return "NO";
         }

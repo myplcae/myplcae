@@ -7,7 +7,6 @@ import java.util.Scanner;
 /**
  *输入；两个字符串
  * 描述：从字符串2中找出所有字符串1中的字符，并排序
- *
  * */
 public class Test10 {
     public static void main(String[] args) {
@@ -22,7 +21,7 @@ public class Test10 {
         for (Character c : str2.toCharArray())
             set2.add(c);
         //定义一个字符集去查看字符串2是否有字符串1中的字符，如果有则装进stringbuild，再输出结果
-            Character[] characters = set1.stream().filter(c->set2.contains(c)).toArray(Character[]::new);
+            Character[] characters = set1.stream().filter(set2::contains).toArray(Character[]::new);
         Arrays.sort(characters);
         //定义StringBuilder
         StringBuilder sb = new StringBuilder();

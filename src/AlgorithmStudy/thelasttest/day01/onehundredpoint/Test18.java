@@ -26,11 +26,10 @@ public class Test18 {
                         maxlen = Math.max(maxlen,r-l);
                         l = r;
                     }
-                    r++;
                 }else {
                     maxlen = Math.max(maxlen,1);
-                    r++;
                 }
+                r++;
             }else {
                 maxlen = Math.max(maxlen,r-l);
                 r++;

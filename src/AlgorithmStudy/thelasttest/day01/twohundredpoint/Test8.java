@@ -47,7 +47,7 @@ public class Test8 {
         }
         StringJoiner sj = new StringJoiner(" ");
         for (Integer  val: path)
-            sj.add(val + "");
+            sj.add(String.valueOf(val));
         return sj.toString();
     }
 }
